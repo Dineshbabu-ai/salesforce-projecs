@@ -1,0 +1,42 @@
+<template>
+     <div class="cart-main-container">
+          <h1 class="cart-heading">My Cart</h1>
+          <button type="button" class="cart-remove-all" onclick={handleRemoveAllBtn}>Remove All</button>
+          <template if:true={cartProList}>
+               <ul class="unorder-list-contianer">
+                 <template for:each={cartProList} for:item="cart">
+                   <li key={cart.id} class="card-items-con">
+                    <div class="card-items">
+                         <div>
+                              <img src={cart.image} class="cart-image" />
+                           </div>
+                           <div class="cart-title-con">
+                              <h1 class="cart-item-title">{cart.title}</h1>
+                              <p>by {cart.category}</p>
+                              <div class="cart-inc-dec-buton">
+                                   <button type="button" onclick={handleDecCount}>-</button>
+                                   <h1 class="cart-item-quantity">{quantityCount}</h1>
+                                   <button type="button" onclick={handleIncCount}>+</button>
+                              </div>
+                              <h1 class="cart-item-price">{cart.price}/-</h1>
+                         </div>
+                    </div>
+                      
+                    
+                   </li>
+                </template>
+               </ul>
+               <div>
+                    <h1 class="order-total-cart">Order Total: <span class="cart-item-total-amount">3000 /-</span></h1>
+                    <p>3 Items in cart</p>
+               </div>
+          </template>
+           
+          <template if:false={cartProList}>
+               <div class="empty-cart-container">
+                    <img src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-cart-img.png" class="empty-cart-image"/>
+               </div>
+          </template>
+          
+     </div>
+</template>

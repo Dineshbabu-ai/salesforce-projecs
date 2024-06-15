@@ -1,0 +1,39 @@
+<template>
+    <template if:true={isInserted}>
+        <div class="single-product-card-c">
+            <h1 class="products-details-heading">Product Details</h1>
+            <template if:true={singleProductDetails}>
+                <div class="single-products-card-container">
+                    <img src={singleProductDetails.image} class="single-product-image"/>
+                    <div class="left-card-text-contianer">
+                        <h1 class="single-pro-title">{singleProductDetails.title}</h1>
+                    <p class="single-pro-price">Rs {singleProductDetails.price}/-</p>
+                    <div class="single-pro-rating-review-cotnainer">
+                        <p >Rating {singleProductDetails.rating.rate}</p>
+                        <p>Reviews {singleProductDetails.rating.count}</p>
+                    </div>
+                    <p class="single-pro-description">{singleProductDetails.description}</p>
+                    <p class="single-category-styling">category : {singleProductDetails.category}</p>
+                     <h1>--------------------------------------------------------------------------------</h1>
+                        <div class="single-product-inc-dec-contianer">
+                            <button type="button" onclick={handleDecreaseCount}> - </button>
+                            <h1 class="count-adding-items">{countOfProducts}</h1>
+                            <button type="button" onclick={handleIncreaseCount}> + </button>
+                        </div>
+                        <div class="add-tocart-button">
+                            <lightning-button label="Add To Cart" variant="brand" onclick={addProductsToCart}></lightning-button>
+                        </div>
+                   </div>
+                
+                </div>
+          </template>
+     <template if:false={singleProductDetails}>
+        <div>
+            <h1 class="loading-heading-details">Loading....</h1> 
+        </div>
+      </template>
+          
+     </div> 
+
+    </template>
+</template>

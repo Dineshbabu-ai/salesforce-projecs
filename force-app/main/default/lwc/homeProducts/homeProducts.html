@@ -1,0 +1,52 @@
+<template>
+    <div class="products-main-container">
+        <template if:false={selectedProductDetails}>
+            <div class="products-getall-container">
+                <template if:false={selectedProductDetails}>
+                    <div>
+                        <h1 class="all-products-heading">All Products</h1>
+                    </div>
+                    <template if:true={allProductsList}>   
+                        <ul class="products-contianer">
+                          <template for:each={allProductsList} for:item="products">
+                             <li key={products.id} class="product-card-contianer">
+                                <div>
+                                    <img src={products.image} class="product-image" />
+                                    <p>{products.title}</p>
+                                   <div class="product-price-rating-contianer">
+                                      <p class="product-price">Rs {products.price}/-</p>
+                                      <p class="product-rating">Rating {products.rating.rate}</p>
+                                   </div>
+                                </div>
+                                
+                                <lightning-button label="Select" variant="brand-outline" onclick={getSelectedProduct} data-id={products.id}></lightning-button>
+                             </li>
+                          </template>
+                      </ul>
+                    </template>
+                    <template if:false={allProductsList}>
+                        <div class="loading-container">
+                            <h1 class="loading-text">Loading....</h1>
+                        </div>
+                    </template>
+                </template>
+            </div>
+       </template>
+        <template if:true={selectedProductDetails}>
+            <div class="products-getall-container">
+                <div class="back-button-styleing">
+                    <lightning-button label="back" variant="brand-outline" onclick={handleNavigation}></lightning-button>
+                 </div>
+                <div>
+                    <c-home-product-details is-inserted={selectedProductDetails} single-product={productId}></c-home-product-details>
+                </div>
+            </div>
+        </template>
+       
+       <div class="cart-prouct-contianer">
+            <c-home-cart-products></c-home-cart-products>
+       </div>
+    </div>
+    
+
+</template>

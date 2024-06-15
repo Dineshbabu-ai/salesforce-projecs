@@ -1,0 +1,52 @@
+.todo-bg-container{
+    background-color:black;
+    height:100vh;
+    padding:30px;
+}
+
+.todo-heading{
+    color:whitesmoke;
+    font-size: 30px;
+    text-align:center
+}
+.button-add{
+    background-color:white;
+    margin-top:20px;
+    font-weight: bold;
+    border-radius:10px;
+    color:blue;
+    width:80px;
+    height:40px;
+}
+
+.todo-items-container{
+    background-color:white;
+    margin-top:40px;
+    list-style-type:none;
+    padding:10px;
+    border-radius:10px;
+    border-color:blue;
+    border-style: solid;
+    border-width: 10px;
+    border-bottom-width: 0px;
+    border-top-width:0px;
+    border-right-width:0px;
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-between;
+    
+}
+
+.item-text-styling{
+    color:blueviolet;
+    font-weight: bold;
+    font-size:15px;
+
+}
+
+.check-box-item{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+}

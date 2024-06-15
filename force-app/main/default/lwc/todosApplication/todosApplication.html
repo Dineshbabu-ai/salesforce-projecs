@@ -1,0 +1,21 @@
+<template>
+    <div class="todo-bg-container">
+        <h1 class="todo-heading"><b>Todos Application</b></h1>
+        <lightning-input label="todo" placeholder="todo text" required="true" onchange={handleInputItem} ></lightning-input>
+        <button class="button-add" onclick={handleAddTodoItems}>Add</button>
+        <template if:true={showItems}>
+            <div>
+                <template for:each={showItems} for:item="item">
+                    <li class="todo-items-container" key={item.id}>
+                        <div class="check-box-item">
+                            <lightning-input type="checkbox" checked={item.isChecked} data-id={item.id} onchange={handleCheckboxChange} ></lightning-input>
+                            <p class="item-text-styling">{item.item}</p>
+                        </div>
+                        
+                        <lightning-icon icon-name="utility:delete" size="small" onclick={handleDeleteTodoItem} data-item-id={item.id}></lightning-icon>
+                    </li>
+                </template>
+            </div>
+        </template>
+    </div>
+</template>

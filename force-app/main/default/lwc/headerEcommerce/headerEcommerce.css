@@ -1,0 +1,49 @@
+.header-container{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+   
+    align-items: center;
+    padding-left:100px;
+    padding-right:100px;
+
+    
+}
+.website-logo{
+    width:130px;
+    height:50px;
+}
+.home-text{
+    color:#1e293b;
+    font-size: 20px;
+    font-family: 500px;
+}
+.products-text{
+    color:#1e293b;
+    font-size: 20px;
+    font-family: 500px;
+}
+.cart-text{
+    color:#1e293b;
+    font-size: 20px;
+    font-family: 500px;
+}
+.button-container{
+    display: flex;
+    flex-direction: row;
+    width:250px;
+    justify-content: space-between;
+}
+.logout-button{
+    background-color:  #0b69ff;
+    padding:10px;
+    color:white;
+    border-width:0px;
+    width:100px;
+    font-weight: bold;
+    border-radius:10px;
+}
+.button-home-product-cart{
+    background-color: transparent;
+    border-width: 0px;
+}

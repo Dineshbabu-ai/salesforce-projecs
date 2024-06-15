@@ -1,0 +1,11 @@
+<template>
+    <h1>Hi dinesh!</h1>
+    <lightning-button label="submit" variant="brand" onclick={handleSubmitStep}></lightning-button>
+    <template if:true={isTrue}>
+        <h1>hi dinesh is connencted</h1>
+    </template>
+    <template if:false={isTrue}>
+        <c-life-cycle-hook-child-lwc></c-life-cycle-hook-child-lwc>
+    </template>
+   
+</template>
